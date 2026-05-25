@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>外國人在台灣稅務估算工具 | Taiwan Starter Guide</title>
+    <meta name="description" content="教育用途的外國人在台灣稅務估算工具，協助理解居住者與非居住者的初步所得稅情境。">
+    <link rel="canonical" href="https://heroic-speculoos-e83aec.netlify.app/zh-hant/tools/tax-estimator.html">
+    <link rel="alternate" hreflang="en" href="https://heroic-speculoos-e83aec.netlify.app/tools/tax-estimator.html">
+    <link rel="alternate" hreflang="zh-Hant" href="https://heroic-speculoos-e83aec.netlify.app/zh-hant/tools/tax-estimator.html">
+    <link rel="alternate" hreflang="x-default" href="https://heroic-speculoos-e83aec.netlify.app/tools/tax-estimator.html">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta property="og:title" content="外國人在台灣稅務估算工具">
+    <meta property="og:description" content="用在台天數、所得與扣除額，初步理解稅務問題。">
+    <meta property="og:image" content="https://heroic-speculoos-e83aec.netlify.app/assets/taipei-skyline.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="../../assets/site.css">
+    <script src="../../assets/site.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "外國人在台灣稅務估算工具",
+        "url": "https://heroic-speculoos-e83aec.netlify.app/zh-hant/tools/tax-estimator.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "zh-Hant",
+        "description": "協助外國人初步理解台灣所得稅情境的教育性工具。"
+      }
+    </script>
+  </head>
+  <body>
+    <div class="progress-bar" data-progress></div>
+    <header class="site-header" data-header>
+      <a class="brand" href="../index.html"><span class="brand-mark">台</span><span>Taiwan Starter Guide</span></a>
+      <nav class="nav-links" aria-label="主要導覽">
+        <a href="../index.html">首頁</a>
+        <a href="../guides.html">指南</a>
+        <a href="cost-of-living.html">生活費工具</a>
+        <a href="tax-estimator.html" aria-current="page">稅務工具</a>
+      </nav>
+      <div class="nav-actions">
+        <nav class="language-menu" aria-label="語言版本">
+          <a href="../../tools/tax-estimator.html">EN</a>
+          <a href="tax-estimator.html" aria-current="true">繁</a>
+        </nav>
+        <button class="icon-button" type="button" data-theme-toggle aria-label="切換深色模式">◐</button>
+      </div>
+    </header>
+
+    <main class="tool-page">
+      <section class="page-hero">
+        <p class="eyebrow">教育性估算</p>
+        <h1>外國人在台灣稅務估算工具</h1>
+        <p class="lead">這個工具是用來幫你整理要問雇主或國稅局的問題，不是報稅、法律、會計或申報建議。</p>
+      </section>
+
+      <section class="calculator-panel">
+        <form class="calculator-grid" data-calculator="tax">
+          <label>
+            稅務年度
+            <select name="year">
+              <option value="2026">2026</option>
+              <option value="2025">2025</option>
+            </select>
+          </label>
+          <label>
+            在台天數
+            <input type="number" name="days" min="0" max="366" value="190">
+          </label>
+          <label>
+            台灣來源所得
+            <input type="number" name="income" min="0" step="1000" value="900000">
+          </label>
+          <label>
+            扶養親屬人數
+            <input type="number" name="dependents" min="0" max="8" value="0">
+          </label>
+          <label>
+            可提出文件的額外扣除額
+            <input type="number" name="extraDeductions" min="0" step="1000" value="0">
+          </label>
+          <button class="button primary" type="submit">估算稅額</button>
+        </form>
+        <div class="result-card" data-result="tax" aria-live="polite">
+          <span class="card-kicker">教育性估算</span>
+          <strong>NT$0</strong>
+          <p>送出表單後，會依簡化模型估算居住者或非居住者情境。</p>
+        </div>
+      </section>
+
+      <section class="basic-card">
+        <p class="eyebrow">官方資料</p>
+        <h2>申報前一定要再次確認。</h2>
+        <p>這個工具只使用簡化的公開稅率表邏輯，沒有涵蓋所有扣除額、所得類型、扣繳情況或特殊個案。</p>
+        <p class="legal-note">內容僅供參考。此頁不是稅務、法律、會計或申報建議。實際規定以財政部、國稅局、移民署、勞動部與其他主管機關公告為準。</p>
+        <ul class="source-list">
+          <li><a href="https://www.etax.nat.gov.tw/etwmain/en/announcement/alien-individual-income-tax/progressive-tax-rate" target="_blank" rel="noopener">eTax 外僑綜合所得稅級距資料</a></li>
+          <li><a href="https://www.etax.nat.gov.tw/etwmain/en/announcement/alien-individual-income-tax/exemption-deduction-table" target="_blank" rel="noopener">eTax 免稅額與扣除額資料</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <a class="brand footer-brand" href="../index.html"><span class="brand-mark">台</span><span>Taiwan Starter Guide</span></a>
+        <p>給新來台者的實用指南，獨立整理、重視官方來源。</p>
+        <p class="footer-disclaimer">內容僅供參考；實際規定以財政部、國稅局、移民署、勞動部與其他主管機關公告為準。</p>
+      </div>
+      <nav aria-label="頁尾導覽">
+        <a href="../../privacy.html">Privacy policy</a>
+        <a href="../../disclaimer.html">Disclaimer</a>
+        <a href="../../contact.html">Contact</a>
+        <a href="../../sources.html">Sources</a>
+      </nav>
+    </footer>
+    <button class="back-to-top" type="button" data-back-to-top aria-label="回到頂部">↑</button>
+  </body>
+</html>

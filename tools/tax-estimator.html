@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Taiwan Tax Estimator for Foreigners | Educational Tool</title>
+    <meta name="description" content="Educational Taiwan tax estimator for foreigners. Estimate resident or non-resident tax scenarios using simplified official eTax rate tables.">
+    <link rel="canonical" href="https://heroic-speculoos-e83aec.netlify.app/tools/tax-estimator.html">
+    <link rel="alternate" hreflang="en" href="https://heroic-speculoos-e83aec.netlify.app/tools/tax-estimator.html">
+    <link rel="alternate" hreflang="zh-Hant" href="https://heroic-speculoos-e83aec.netlify.app/zh-hant/tools/tax-estimator.html">
+    <link rel="alternate" hreflang="x-default" href="https://heroic-speculoos-e83aec.netlify.app/tools/tax-estimator.html">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta property="og:title" content="Taiwan Tax Estimator for Foreigners">
+    <meta property="og:description" content="Plan tax questions around residency days, income, deductions, and simplified withholding scenarios.">
+    <meta property="og:image" content="https://heroic-speculoos-e83aec.netlify.app/assets/taipei-skyline.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="../assets/site.css">
+    <script src="../assets/site.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Taiwan Tax Estimator for Foreigners",
+        "url": "https://heroic-speculoos-e83aec.netlify.app/tools/tax-estimator.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "description": "Educational calculator for estimating simplified Taiwan foreigner tax scenarios."
+      }
+    </script>
+  </head>
+  <body>
+    <div class="progress-bar" data-progress></div>
+    <header class="site-header" data-header>
+      <a class="brand" href="../index.html"><span class="brand-mark">台</span><span>Taiwan Starter Guide</span></a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="../index.html">Home</a>
+        <a href="../guides.html">Guides</a>
+        <a href="cost-of-living.html">Cost tool</a>
+        <a href="tax-estimator.html" aria-current="page">Tax tool</a>
+      </nav>
+      <div class="nav-actions">
+        <nav class="language-menu" aria-label="Language versions">
+          <a href="tax-estimator.html" aria-current="true">EN</a>
+          <a href="../zh-hant/tools/tax-estimator.html">繁</a>
+        </nav>
+        <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle dark mode">◐</button>
+      </div>
+    </header>
+
+    <main class="tool-page">
+      <section class="page-hero">
+        <p class="eyebrow">Educational estimator</p>
+        <h1>Taiwan Tax Estimator for Foreigners</h1>
+        <p class="lead">This tool helps you frame questions for your employer or the tax office. It is not tax, legal, accounting, or filing advice.</p>
+      </section>
+
+      <section class="calculator-panel">
+        <form class="calculator-grid" data-calculator="tax">
+          <label>
+            Tax year
+            <select name="year">
+              <option value="2026">2026</option>
+              <option value="2025">2025</option>
+            </select>
+          </label>
+          <label>
+            Days in Taiwan
+            <input type="number" name="days" min="0" max="366" value="190">
+          </label>
+          <label>
+            Taiwan-source income
+            <input type="number" name="income" min="0" step="1000" value="900000">
+          </label>
+          <label>
+            Dependents claimed
+            <input type="number" name="dependents" min="0" max="8" value="0">
+          </label>
+          <label>
+            Extra deductions you can document
+            <input type="number" name="extraDeductions" min="0" step="1000" value="0">
+          </label>
+          <button class="button primary" type="submit">Estimate tax</button>
+        </form>
+        <div class="result-card" data-result="tax" aria-live="polite">
+          <span class="card-kicker">Educational estimate</span>
+          <strong>NT$0</strong>
+          <p>Submit the form to estimate resident or non-resident tax treatment.</p>
+        </div>
+      </section>
+
+      <section class="basic-card">
+        <p class="eyebrow">Official tables</p>
+        <h2>Verify before you file.</h2>
+        <p>This calculator uses simplified public rate-table logic and does not handle every deduction, income type, withholding situation, or special case.</p>
+        <p class="legal-note">For reference only. This page is not tax, legal, accounting, or filing advice. Actual rules and updates published by the Ministry of Finance, National Taxation Bureau, National Immigration Agency, Ministry of Labor, and other competent agencies prevail.</p>
+        <ul class="source-list">
+          <li><a href="https://www.etax.nat.gov.tw/etwmain/en/announcement/alien-individual-income-tax/progressive-tax-rate" target="_blank" rel="noopener">eTax progressive tax rate table</a></li>
+          <li><a href="https://www.etax.nat.gov.tw/etwmain/en/announcement/alien-individual-income-tax/exemption-deduction-table" target="_blank" rel="noopener">eTax exemption and deduction table</a></li>
+        </ul>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div>
+        <a class="brand footer-brand" href="../index.html"><span class="brand-mark">台</span><span>Taiwan Starter Guide</span></a>
+        <p>Plain-English Taiwan guides for newcomers. Independent, practical, and source-backed.</p>
+        <p class="footer-disclaimer">Information is for reference only. Official announcements from the Ministry of Finance, National Taxation Bureau, National Immigration Agency, Ministry of Labor, and other agencies prevail.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="../privacy.html">Privacy policy</a>
+        <a href="../disclaimer.html">Disclaimer</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../sources.html">Sources</a>
+      </nav>
+    </footer>
+    <button class="back-to-top" type="button" data-back-to-top aria-label="Back to top">↑</button>
+  </body>
+</html>

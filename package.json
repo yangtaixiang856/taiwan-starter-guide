@@ -1,0 +1,19 @@
+{
+  "name": "taiwan-starter-guide",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "build": "bash scripts/build-netlify.sh",
+    "pretest": "npm run build",
+    "test": "playwright test",
+    "pretest:ui": "npm run build",
+    "test:ui": "playwright test --ui",
+    "test:report": "playwright show-report",
+    "pretest:launch": "npm run build",
+    "test:launch": "playwright test tests/launch.spec.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.60.0"
+  }
+}

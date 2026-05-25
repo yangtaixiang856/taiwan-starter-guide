@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://heroic-speculoos-e83aec.netlify.app/sitemap.xml

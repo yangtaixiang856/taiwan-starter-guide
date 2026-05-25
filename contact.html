@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact | Taiwan Starter Guide</title>
+    <meta name="description" content="Contact Taiwan Starter Guide.">
+    <link rel="canonical" href="https://heroic-speculoos-e83aec.netlify.app/contact.html">
+    <meta name="robots" content="index,follow">
+    <link rel="stylesheet" href="assets/site.css">
+    <script src="assets/site.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">台</span><span>Taiwan Starter Guide</span></a><nav class="nav-links" aria-label="Primary navigation"><a href="guides.html">Guides</a><a href="sources.html">Sources</a><a href="disclaimer.html">Disclaimer</a></nav><button class="icon-button" type="button" data-theme-toggle aria-label="Toggle dark mode">◐</button></header>
+    <main class="basic-page">
+      <h1>Contact</h1>
+      <article class="basic-card">
+        <p>Have a correction, official source, school resource, newcomer question, or beta-test note? Email <a href="mailto:yangtaixiang856@gmail.com?subject=Taiwan%20Starter%20Guide%20feedback">yangtaixiang856@gmail.com</a>.</p>
+        <p>Please include the page URL, what should be updated, and the official source if the topic involves tax, immigration, health insurance, labor rules, or financial services.</p>
+      </article>
+      <article class="basic-card" id="feedback">
+        <h2>Send beta feedback</h2>
+        <p>When this site is deployed on Netlify, this form is saved automatically as a Netlify Forms submission. During local testing, it falls back to opening an email draft so no message gets lost.</p>
+        <form class="feedback-form" name="beta-feedback" method="POST" action="/success.html" data-netlify="true" netlify-honeypot="website" data-feedback-form data-feedback-recipient="yangtaixiang856@gmail.com">
+          <input type="hidden" name="form-name" value="beta-feedback">
+          <label>
+            Name
+            <input name="name" type="text" autocomplete="name" placeholder="Your name">
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" autocomplete="email" placeholder="name@domain.com">
+          </label>
+          <label>
+            Page URL
+            <input name="page" type="url" data-feedback-page placeholder="Paste the page URL or leave the auto-filled URL">
+          </label>
+          <label>
+            Feedback type
+            <select name="type">
+              <option value="confusing">Something is confusing</option>
+              <option value="broken">A button, link, or tool is broken</option>
+              <option value="wrong-info">Information may be wrong or outdated</option>
+              <option value="missing-topic">A topic is missing</option>
+              <option value="useful">This was useful</option>
+            </select>
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="6" required placeholder="Tell me what you tried, what felt useful, and what should be improved."></textarea>
+          </label>
+          <label>
+            Official source, if relevant
+            <input name="source" type="url" placeholder="https://...">
+          </label>
+          <input class="honeypot" name="website" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="button primary" type="submit">Send feedback</button>
+          <p class="form-note" data-feedback-message>On Netlify, this saves as a form submission. Local testing opens your email app as a backup.</p>
+        </form>
+      </article>
+      <article class="basic-card">
+        <h2>Beta feedback checklist</h2>
+        <p>If you are testing the site for a friend, the most useful feedback is simple and specific.</p>
+        <ul class="clean-list">
+          <li>Which page did you open first?</li>
+          <li>What were you trying to find?</li>
+          <li>Which answer helped you?</li>
+          <li>Which part felt confusing, too vague, or not trustworthy?</li>
+          <li>Did any button, link, search box, language switch, or calculator feel broken?</li>
+        </ul>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div>
+        <a class="brand footer-brand" href="index.html"><span class="brand-mark">台</span><span>Taiwan Starter Guide</span></a>
+        <p>Plain-English Taiwan guides for newcomers. Independent, practical, and source-backed.</p>
+        <p class="footer-disclaimer">Information is for reference only. Official announcements from the Ministry of Finance, National Taxation Bureau, National Immigration Agency, Ministry of Labor, and other agencies prevail.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="privacy.html">Privacy policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a href="sources.html">Sources</a>
+      </nav>
+    </footer>
+  </body>
+</html>

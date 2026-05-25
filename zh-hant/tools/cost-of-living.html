@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>台灣生活費試算工具 | Taiwan Starter Guide</title>
+    <meta name="description" content="用城市、住房型態、生活方式與每月緩衝金，估算剛來台灣時可能需要的每月生活費。">
+    <link rel="canonical" href="https://heroic-speculoos-e83aec.netlify.app/zh-hant/tools/cost-of-living.html">
+    <link rel="alternate" hreflang="en" href="https://heroic-speculoos-e83aec.netlify.app/tools/cost-of-living.html">
+    <link rel="alternate" hreflang="zh-Hant" href="https://heroic-speculoos-e83aec.netlify.app/zh-hant/tools/cost-of-living.html">
+    <link rel="alternate" hreflang="x-default" href="https://heroic-speculoos-e83aec.netlify.app/tools/cost-of-living.html">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta property="og:title" content="台灣生活費試算工具">
+    <meta property="og:description" content="估算租金、餐飲、交通、基本開銷與剛抵台的預備金。">
+    <meta property="og:image" content="https://heroic-speculoos-e83aec.netlify.app/assets/taipei-skyline.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="../../assets/site.css">
+    <script src="../../assets/site.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "台灣生活費試算工具",
+        "url": "https://heroic-speculoos-e83aec.netlify.app/zh-hant/tools/cost-of-living.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "zh-Hant",
+        "description": "協助新來台者估算每月生活費的教育性工具。"
+      }
+    </script>
+  </head>
+  <body>
+    <div class="progress-bar" data-progress></div>
+    <header class="site-header" data-header>
+      <a class="brand" href="../index.html"><span class="brand-mark">台</span><span>Taiwan Starter Guide</span></a>
+      <nav class="nav-links" aria-label="主要導覽">
+        <a href="../index.html">首頁</a>
+        <a href="../guides.html">指南</a>
+        <a href="cost-of-living.html" aria-current="page">生活費工具</a>
+        <a href="tax-estimator.html">稅務工具</a>
+      </nav>
+      <div class="nav-actions">
+        <nav class="language-menu" aria-label="語言版本">
+          <a href="../../tools/cost-of-living.html">EN</a>
+          <a href="cost-of-living.html" aria-current="true">繁</a>
+        </nav>
+        <button class="icon-button" type="button" data-theme-toggle aria-label="切換深色模式">◐</button>
+      </div>
+    </header>
+
+    <main class="tool-page">
+      <section class="page-hero">
+        <p class="eyebrow">生活費試算</p>
+        <h1>台灣生活費試算工具</h1>
+        <p class="lead">先抓一個初步預算，再用你實際找到的房租、宿舍、通勤、餐飲、保險與手機費慢慢修正。</p>
+      </section>
+
+      <section class="calculator-panel">
+        <form class="calculator-grid" data-calculator="cost">
+          <label>
+            城市
+            <select name="city">
+              <option value="taipei">台北</option>
+              <option value="new-taipei">新北</option>
+              <option value="taichung">台中</option>
+              <option value="tainan">台南</option>
+              <option value="kaohsiung">高雄</option>
+            </select>
+          </label>
+          <label>
+            住房型態
+            <select name="housing">
+              <option value="shared">分租房或宿舍</option>
+              <option value="studio">小套房</option>
+              <option value="one-bed">一房一廳</option>
+            </select>
+          </label>
+          <label>
+            生活方式
+            <select name="lifestyle">
+              <option value="lean">學生省錢型</option>
+              <option value="balanced">一般平衡型</option>
+              <option value="comfortable">較舒適型</option>
+            </select>
+          </label>
+          <label>
+            每月緩衝金
+            <input type="number" name="buffer" min="0" step="500" value="3000">
+          </label>
+          <button class="button primary" type="submit">估算每月預算</button>
+        </form>
+        <div class="result-card" data-result="cost" aria-live="polite">
+          <span class="card-kicker">每月估算總額</span>
+          <strong>NT$0</strong>
+          <p>送出表單後，會估算住房、餐飲、交通、基本開銷與緩衝金。</p>
+        </div>
+      </section>
+
+      <section class="basic-card">
+        <p class="eyebrow">怎麼看這個數字</p>
+        <h2>剛抵台的第一個月，通常不是正常月份。</h2>
+        <p>第一個月常會包含押金、第一期房租、臨時 SIM、床具、鍋具、交通卡、證件照和小型採買。請把「抵台準備金」和一般每月生活費分開看。</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <a class="brand footer-brand" href="../index.html"><span class="brand-mark">台</span><span>Taiwan Starter Guide</span></a>
+        <p>給新來台者的實用指南，獨立整理、重視官方來源。</p>
+        <p class="footer-disclaimer">內容僅供參考；實際規定以財政部、國稅局、移民署、勞動部與其他主管機關公告為準。</p>
+      </div>
+      <nav aria-label="頁尾導覽">
+        <a href="../../privacy.html">Privacy policy</a>
+        <a href="../../disclaimer.html">Disclaimer</a>
+        <a href="../../contact.html">Contact</a>
+        <a href="../../sources.html">Sources</a>
+      </nav>
+    </footer>
+    <button class="back-to-top" type="button" data-back-to-top aria-label="回到頂部">↑</button>
+  </body>
+</html>

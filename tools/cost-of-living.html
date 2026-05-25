@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Taiwan Cost of Living Calculator for Students and Expats</title>
+    <meta name="description" content="Estimate monthly Taiwan living costs by city, housing type, lifestyle, and arrival buffer. Built for international students, expats, workers, and newcomers.">
+    <link rel="canonical" href="https://heroic-speculoos-e83aec.netlify.app/tools/cost-of-living.html">
+    <link rel="alternate" hreflang="en" href="https://heroic-speculoos-e83aec.netlify.app/tools/cost-of-living.html">
+    <link rel="alternate" hreflang="zh-Hant" href="https://heroic-speculoos-e83aec.netlify.app/zh-hant/tools/cost-of-living.html">
+    <link rel="alternate" hreflang="x-default" href="https://heroic-speculoos-e83aec.netlify.app/tools/cost-of-living.html">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta property="og:title" content="Taiwan Cost of Living Calculator">
+    <meta property="og:description" content="Estimate rent, food, transport, basics, and your first-month arrival runway in Taiwan.">
+    <meta property="og:image" content="https://heroic-speculoos-e83aec.netlify.app/assets/taipei-skyline.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="../assets/site.css">
+    <script src="../assets/site.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Taiwan Cost of Living Calculator",
+        "url": "https://heroic-speculoos-e83aec.netlify.app/tools/cost-of-living.html",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "description": "Educational calculator for estimating Taiwan newcomer living costs."
+      }
+    </script>
+  </head>
+  <body>
+    <div class="progress-bar" data-progress></div>
+    <header class="site-header" data-header>
+      <a class="brand" href="../index.html"><span class="brand-mark">台</span><span>Taiwan Starter Guide</span></a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="../index.html">Home</a>
+        <a href="../guides.html">Guides</a>
+        <a href="cost-of-living.html" aria-current="page">Cost tool</a>
+        <a href="tax-estimator.html">Tax tool</a>
+      </nav>
+      <div class="nav-actions">
+        <nav class="language-menu" aria-label="Language versions">
+          <a href="cost-of-living.html" aria-current="true">EN</a>
+          <a href="../zh-hant/tools/cost-of-living.html">繁</a>
+        </nav>
+        <button class="icon-button" type="button" data-theme-toggle aria-label="Toggle dark mode">◐</button>
+      </div>
+    </header>
+
+    <main class="tool-page">
+      <section class="page-hero">
+        <p class="eyebrow">Budget calculator</p>
+        <h1>Taiwan Cost of Living Calculator</h1>
+        <p class="lead">Use this as a first planning number, then replace the estimate with real rent, dorm, commute, food, insurance, and phone costs.</p>
+      </section>
+
+      <section class="calculator-panel">
+        <form class="calculator-grid" data-calculator="cost">
+          <label>
+            City
+            <select name="city">
+              <option value="taipei">Taipei</option>
+              <option value="new-taipei">New Taipei</option>
+              <option value="taichung">Taichung</option>
+              <option value="tainan">Tainan</option>
+              <option value="kaohsiung">Kaohsiung</option>
+            </select>
+          </label>
+          <label>
+            Housing style
+            <select name="housing">
+              <option value="shared">Shared room or dorm</option>
+              <option value="studio">Small studio</option>
+              <option value="one-bed">One-bedroom apartment</option>
+            </select>
+          </label>
+          <label>
+            Lifestyle
+            <select name="lifestyle">
+              <option value="lean">Lean student budget</option>
+              <option value="balanced">Balanced</option>
+              <option value="comfortable">Comfortable expat budget</option>
+            </select>
+          </label>
+          <label>
+            Monthly buffer
+            <input type="number" name="buffer" min="0" step="500" value="3000">
+          </label>
+          <button class="button primary" type="submit">Estimate monthly budget</button>
+        </form>
+        <div class="result-card" data-result="cost" aria-live="polite">
+          <span class="card-kicker">Estimated monthly total</span>
+          <strong>NT$0</strong>
+          <p>Submit the form to estimate housing, food, transport, basics, and your buffer.</p>
+        </div>
+      </section>
+
+      <section class="basic-card">
+        <p class="eyebrow">How to read this number</p>
+        <h2>Arrival month is not a normal month.</h2>
+        <p>Your first month often includes deposit, first rent, temporary SIM, bedding, cookware, transit cards, document photos, and small setup purchases. Keep that separate from your normal monthly budget.</p>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div>
+        <a class="brand footer-brand" href="../index.html"><span class="brand-mark">台</span><span>Taiwan Starter Guide</span></a>
+        <p>Plain-English Taiwan guides for newcomers. Independent, practical, and source-backed.</p>
+        <p class="footer-disclaimer">Information is for reference only. Official announcements from the Ministry of Finance, National Taxation Bureau, National Immigration Agency, Ministry of Labor, and other agencies prevail.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="../privacy.html">Privacy policy</a>
+        <a href="../disclaimer.html">Disclaimer</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../sources.html">Sources</a>
+      </nav>
+    </footer>
+    <button class="back-to-top" type="button" data-back-to-top aria-label="Back to top">↑</button>
+  </body>
+</html>
