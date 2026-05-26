@@ -1,6 +1,31 @@
 # Taiwan Starter Guide Launch Checklist
 
-Last checked: 2026-05-24
+Last checked: 2026-05-27
+
+## 2026-05-27 Google Analytics / Traffic Tracking
+
+### 已完成
+
+- 已加入 Google Analytics 4 measurement ID：`G-SQV27NLLKX`。
+- 追蹤碼集中在 `assets/site.js`，不需要手動貼到每個 HTML 頁面。
+- 已加入基本事件追蹤：
+  - `guide_card_link_click`
+  - `internal_cta_click`
+  - `external_link_click`
+  - `guide_search`
+  - `guide_filter_click`
+  - `copy_link`
+  - `calculator_used`
+  - `newsletter_submit_attempt / success / fallback / mailto`
+  - `feedback_submit_attempt / success / fallback / mailto`
+- 已避免把 newsletter email、feedback message 等表單內容送到 Google Analytics。
+- 已更新 `privacy.html`，說明網站使用 Google Analytics、Netlify Forms 與 email fallback。
+
+### 待人工確認
+
+- 部署後請到 Google Analytics 的 Realtime / 即時報表，打開網站並點幾個頁面，確認有即時訪客資料。
+- 第一次部署後 Google Analytics 可能需要幾分鐘才看到資料。
+- 若未來加入 affiliate、廣告、更多追蹤工具，需先更新 privacy policy 與 disclosure。
 
 ## 2026-05-24 GitHub + Netlify Launch Prep
 

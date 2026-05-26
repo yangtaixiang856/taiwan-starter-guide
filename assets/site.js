@@ -4,6 +4,8 @@ const money = new Intl.NumberFormat("en-US", {
   maximumFractionDigits: 0
 });
 
+const analyticsId = "G-SQV27NLLKX";
+
 const uiText = {
   en: {
     cities: {
@@ -63,6 +65,36 @@ function activeLocale() {
 
 function text() {
   return uiText[activeLocale()];
+}
+
+function initAnalytics() {
+  if (!analyticsId || !window.location.protocol.startsWith("http")) return;
+  if (navigator.doNotTrack === "1" || window.doNotTrack === "1") return;
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function gtag() {
+    window.dataLayer.push(arguments);
+  };
+  window.gtag("js", new Date());
+  window.gtag("config", analyticsId, {
+    send_page_view: true,
+    anonymize_ip: true
+  });
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsId}`;
+  document.head.appendChild(script);
+}
+
+function trackEvent(name, params = {}) {
+  if (typeof window.gtag !== "function") return;
+  window.gtag("event", name, {
+    page_location: window.location.href,
+    page_title: document.title,
+    language: document.documentElement.lang || "en",
+    ...params
+  });
 }
 
 const costModel = {
@@ -215,6 +247,9 @@ function initCalculators() {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       run();
+      trackEvent("calculator_used", {
+        calculator_type: form.dataset.calculator || "unknown"
+      });
     });
     run();
   });
@@ -230,6 +265,46 @@ function initReadingProgress() {
   };
   window.addEventListener("scroll", update, { passive: true });
   update();
+}
+
+function initClickTracking() {
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a[href]");
+    if (!link) return;
+
+    const href = link.getAttribute("href") || "";
+    const label = link.textContent.trim().replace(/\s+/g, " ").slice(0, 80);
+    let targetUrl;
+    try {
+      targetUrl = new URL(href, window.location.href);
+    } catch {
+      return;
+    }
+
+    if (targetUrl.origin !== window.location.origin) {
+      trackEvent("external_link_click", {
+        link_url: targetUrl.href,
+        link_text: label
+      });
+      return;
+    }
+
+    if (link.closest("[data-guide-card]")) {
+      trackEvent("guide_card_link_click", {
+        guide_id: link.closest("[data-guide-card]")?.id || "",
+        link_url: targetUrl.pathname + targetUrl.hash,
+        link_text: label
+      });
+      return;
+    }
+
+    if (link.classList.contains("button") || link.classList.contains("source-link") || link.dataset.betaFeedback) {
+      trackEvent("internal_cta_click", {
+        link_url: targetUrl.pathname + targetUrl.hash,
+        link_text: label
+      });
+    }
+  });
 }
 
 function initBackToTop() {
@@ -366,6 +441,19 @@ function initGuideSearch() {
   statusTarget?.after(status);
 
   let activeFilter = "all";
+  let searchTimer;
+  const queueSearchEvent = () => {
+    window.clearTimeout(searchTimer);
+    searchTimer = window.setTimeout(() => {
+      const query = input.value.trim();
+      if (query.length >= 2) {
+        trackEvent("guide_search", {
+          search_term_length: query.length
+        });
+      }
+    }, 900);
+  };
+
   const apply = () => {
     const query = normalizeSearchText(input.value);
     const tokens = searchTokens(input.value);
@@ -388,12 +476,18 @@ function initGuideSearch() {
     status.textContent = guideSearchMessage(shown, cards.length);
   };
 
-  input.addEventListener("input", apply);
+  input.addEventListener("input", () => {
+    apply();
+    queueSearchEvent();
+  });
   filters.forEach((button) => {
     button.addEventListener("click", () => {
       filters.forEach((item) => item.classList.remove("active"));
       button.classList.add("active");
       activeFilter = button.dataset.guideFilter;
+      trackEvent("guide_filter_click", {
+        filter: activeFilter
+      });
       apply();
     });
   });
@@ -409,6 +503,9 @@ function initCopyLinks() {
       const url = `${window.location.origin}${window.location.pathname}${hash}`;
       try {
         await navigator.clipboard.writeText(url);
+        trackEvent("copy_link", {
+          copied_hash: hash || ""
+        });
         button.textContent = copiedText;
         setTimeout(() => (button.textContent = defaultText), 1400);
       } catch {
@@ -433,6 +530,7 @@ function initSignupForm() {
     formData.append("currentUrl", window.location.href);
 
     if (window.location.protocol.startsWith("http")) {
+      trackEvent("newsletter_submit_attempt");
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -441,15 +539,18 @@ function initSignupForm() {
         .then((response) => {
           if (!response.ok) throw new Error("Newsletter submission failed");
           form.reset();
+          trackEvent("newsletter_submit_success");
           if (message) message.textContent = "Thanks. You are on the beta update list.";
         })
         .catch(() => {
+          trackEvent("newsletter_submit_fallback");
           if (message) message.textContent = "Signup failed, so your email app will open as a backup.";
           window.location.href = newsletterMailto(email);
         });
       return;
     }
 
+    trackEvent("newsletter_submit_mailto");
     if (message) message.textContent = "Your email app should open now. Send the draft to join the beta update list.";
     window.location.href = newsletterMailto(email);
   });
@@ -501,6 +602,9 @@ function initFeedbackForm() {
 
     if (endpoint || window.location.protocol.startsWith("http")) {
       try {
+        trackEvent("feedback_submit_attempt", {
+          feedback_type: String(data.type || "")
+        });
         const response = await fetch(endpoint || "/", {
           method: "POST",
           headers: endpoint
@@ -510,13 +614,22 @@ function initFeedbackForm() {
         });
         if (!response.ok) throw new Error("Feedback endpoint failed");
         form.reset();
+        trackEvent("feedback_submit_success", {
+          feedback_type: String(data.type || "")
+        });
         if (pageInput) pageInput.value = params.get("from") || document.referrer || "";
         if (message) message.textContent = "Thanks. Your feedback was sent.";
         return;
       } catch {
+        trackEvent("feedback_submit_fallback", {
+          feedback_type: String(data.type || "")
+        });
         if (message) message.textContent = "Automatic delivery failed, so your email app will open as a backup.";
       }
     } else if (message) {
+      trackEvent("feedback_submit_mailto", {
+        feedback_type: String(data.type || "")
+      });
       message.textContent = "Automatic delivery is not connected yet. Your email app will open as a backup.";
     }
 
@@ -549,10 +662,12 @@ function initBetaMode() {
   }
 }
 
+initAnalytics();
 initBetaMode();
 initTheme();
 initReadingProgress();
 initBackToTop();
+initClickTracking();
 initGuideSearch();
 initCopyLinks();
 initSignupForm();
