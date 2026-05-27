@@ -2,6 +2,57 @@
 
 Last checked: 2026-05-27
 
+## 2026-05-27 Share-Ready Core Guide Deepening
+
+### 已完成
+
+- 已補強 4 篇可公開分享的英文 SEO guide：
+  - `guides/renting-room-in-taiwan.html`
+  - `guides/opening-bank-account-in-taiwan.html`
+  - `guides/prepare-before-moving-to-taiwan.html`
+  - `guides/sim-card-esim-taiwan.html`
+- 每篇已補上或加強：
+  - clear short answer
+  - who this guide is for
+  - step-by-step checklist
+  - realistic example
+  - common mistakes
+  - comparison table where useful
+  - what to do next
+  - internal links
+  - bottom feedback / report outdated info entry
+  - copy page link button
+  - visible `Last updated 2026-05-27`
+- 租屋指南已補強：591、Rakuya、Tealit、Facebook rental groups、school housing board、rental deposit、electricity fee、Chinese address、official mail、scam checks、landlord / agent questions。
+- 銀行開戶指南已補強：employer payroll bank、school-recommended branch、passport、ARC、Taiwan phone number、Chinese address、student ID / employment proof、larger branch strategy、rejection follow-up。
+- 來台前準備指南已補強：airport arrival、first SIM / eSIM、EasyCard、temporary accommodation、documents folder、school international office、employer HR、first 7 days、first 30 days。
+- SIM/eSIM 指南已補強：airport SIM、city telecom store、prepaid vs monthly plan、passport、ARC if needed、Taiwan phone number、SMS、eSIM limitations、short-term vs long-term stay。
+- 英文 guide library 已更新四篇的搜尋 tags 與摘要，搜尋 `renting`、`591`、`bank`、`payroll bank`、`SIM`、`eSIM`、`prepare` 等關鍵字可找到相關 card。
+- 首頁 featured guides 已改為更符合前期內容深度目標：來台前準備、銀行開戶、租屋。
+- 已保留低風險策略：目前沒有新增 AdSense、affiliate link、金融導購或大量低品質文章。
+
+### 待人工確認官方來源
+
+- 租屋：內政部租賃用電規則、住宅租賃契約範本、地方政府租屋爭議協助管道。
+- 銀行：Banking Bureau / FSC 外國人開戶說明、各銀行最新分行文件要求、AML / KYC 實務要求。
+- 來台前準備：NIA、NHIA、WDA、MOE、eTax、Taoyuan Airport、Taipei Metro、EasyCard 等官方連結與最新流程。
+- SIM/eSIM：Chunghwa Telecom、Taiwan Mobile 與其他電信業者最新旅客 SIM、eSIM、預付卡、月租方案文件與價格。
+
+### 適合小量社群測試
+
+- `Prepare Before Moving to Taiwan`：適合外籍生社團、學校國際生群組、新生行前群組。
+- `Renting a Room in Taiwan`：適合外籍生租屋社團、Taipei / New Taipei rental groups、r/taiwan 問租屋時回覆。
+- `Opening a Bank Account in Taiwan`：適合剛到台灣的學生、白領工作者、HR 或學校窗口分享。
+- `SIM / eSIM in Taiwan`：適合抵台前、機場到達、第一週生活群組分享。
+
+### 檢查結果
+
+- 已重新執行 `scripts/build-netlify.sh`，`public/` 可重新產生。
+- 已用靜態檢查確認 `public/` 內 34 個 HTML 頁面的內部連結、圖片/資源、錨點、sitemap URL、newsletter form、contact/feedback form。
+- 已確認沒有 `href="#"`、空連結、`javascript:void(0)`、`TODO`、`localhost`、`127.0.0.1`、`file:///Users`、`lorem ipsum` 出現在正式 HTML/CSS/JS/sitemap/robots 檔案中。
+- 已確認英文 guide library 能搜尋到 `Renting a room in Taiwan`、`Opening a bank account in Taiwan`、`Prepare Before Moving to Taiwan`、`SIM or eSIM`。
+- Playwright 套件在本次 Codex 執行環境中不可用，未能執行完整瀏覽器測試；需要在本機有 npm/playwright 的環境再跑 `npm test`。
+
 ## 2026-05-27 Google Analytics / Traffic Tracking
 
 ### 已完成
